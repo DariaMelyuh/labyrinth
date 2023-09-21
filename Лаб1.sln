@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Лаб1", "Лаб1\Лаб1.csproj", "{15611510-E92C-489D-9B72-6010C4A27FE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{A8AE07B9-90E9-40C2-8082-C538647D1EEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{C26F52CA-A3E7-424A-B353-6BC9307D108E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15611510-E92C-489D-9B72-6010C4A27FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15611510-E92C-489D-9B72-6010C4A27FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15611510-E92C-489D-9B72-6010C4A27FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15611510-E92C-489D-9B72-6010C4A27FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8AE07B9-90E9-40C2-8082-C538647D1EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8AE07B9-90E9-40C2-8082-C538647D1EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8AE07B9-90E9-40C2-8082-C538647D1EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8AE07B9-90E9-40C2-8082-C538647D1EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82DF3BFA-B8F5-4299-AB5F-6C815578579C}
+	EndGlobalSection
+EndGlobal
