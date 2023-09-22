@@ -7,10 +7,10 @@ namespace Library
         private readonly Room _room2;
         private readonly bool _isOpen;
 
-        public Door(Room room1, Room room2)
+        public Door(Room _room1, Room _room2)
         {
-            _room1 = room1;
-            _room2 = room2;
+            this._room1 = _room1;
+            this._room2 = _room2;
             _isOpen = true;
         }
 

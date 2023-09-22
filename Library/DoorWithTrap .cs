@@ -4,7 +4,7 @@ namespace Лаб1
 {
     public class DoorWithTrap : Door
     {
-        public DoorWithTrap(Room room1, Room room2) : base(room1, room2)
+        public DoorWithTrap(Room _room1, Room _room2) : base(_room1, _room2)
         { }
 
         public void Trap()

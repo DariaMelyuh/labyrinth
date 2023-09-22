@@ -19,7 +19,7 @@ namespace Лаб1
 
             Room room1WithBomb = mazeWithBomb.RoomNo(1);
             room1WithBomb.Enter();
-          
+
 
             Console.ReadLine();
         }

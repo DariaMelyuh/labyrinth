@@ -4,21 +4,21 @@ namespace Лаб1
 {
     public class WallWithBomb : Wall
     {
-        private bool isExploded = false;
+        private bool _isExploded = false;
 
         public void Explode()
         {
-            if (!isExploded)
+            if (!_isExploded)
             {
                 Console.WriteLine("Стены разрушены!");
-                isExploded = true;
+                _isExploded = true;
                
             }
             
         }
         public override void Enter()
         {
-           if (isExploded)
+           if (_isExploded)
            {
                 Console.WriteLine("Вы встретили разрушенную стену");
            }
