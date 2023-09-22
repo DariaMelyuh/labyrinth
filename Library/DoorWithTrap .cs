@@ -7,7 +7,7 @@ namespace Лаб1
         public DoorWithTrap(Room _room1, Room _room2) : base(_room1, _room2)
         { }
 
-        public void Trap()
+        public override void Enter()
         {
             Console.WriteLine("Вас заперли!");
         }

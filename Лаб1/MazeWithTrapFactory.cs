@@ -3,14 +3,14 @@ namespace Лаб1
 {
     public class MazeWithTrapFactory : MazeFactory
     {
-        public override Door CreateDoor(Room room1, Room room2)
+        public override Door CreateDoor(Room _room1, Room _room2)
         {
-            return new DoorWithTrap(room1, room2);
+            return new DoorWithTrap(_room1, _room2);
         }
 
-        public override Room CreateRoom(int roomNumber)
+        public override Room CreateRoom(int Number)
         {
-            return new RoomWithTrap(roomNumber);
+            return new RoomWithTrap(Number);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Лаб1
             return new WallWithBomb();
         }
 
-        public override Room CreateRoom(int roomNumber)
+        public override Room CreateRoom(int Number)
         {
-            return new RoomWithBomb(roomNumber);
+            return new RoomWithBomb(Number);
         }
     }
 }

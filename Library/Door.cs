@@ -14,7 +14,7 @@ namespace Library
             _isOpen = true;
         }
 
-        public void Enter()
+        public virtual void Enter()
         {
             if (_isOpen)
             {

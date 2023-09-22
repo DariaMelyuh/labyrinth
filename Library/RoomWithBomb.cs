@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Library;
 namespace Лаб1
 {
@@ -6,7 +7,7 @@ namespace Лаб1
     {
         private static Random Rnd = new Random();
 
-        public RoomWithBomb(int roomNo) : base(roomNo) { }
+        public RoomWithBomb(int Number) : base(Number) { }
 
         public override void Enter()
         {

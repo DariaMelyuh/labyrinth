@@ -20,7 +20,7 @@ namespace Лаб1
         {
             base.Enter();
             Console.WriteLine("Вы попали в ловушку!");
-            _trapDoor.Trap();
+            _trapDoor.Enter();
         }
     }
 }
