@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Library;
-
 namespace Лаб1
 {
     public class WallWithBomb : Wall
@@ -17,7 +12,21 @@ namespace Лаб1
             {
                 Console.WriteLine("Стены разрушены!");
                 isExploded = true;
+               
             }
+            
         }
+        public override void Enter()
+        {
+           if (isExploded)
+           {
+                Console.WriteLine("Вы встретили разрушенную стену");
+           }
+           else
+           {
+              base.Enter();
+           }
+        }
+
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library;
-
+﻿using Library;
 namespace Лаб1
 {
     public class Program
@@ -25,6 +19,8 @@ namespace Лаб1
 
             Room room1WithBomb = mazeWithBomb.RoomNo(1);
             room1WithBomb.Enter();
+          
+
             Console.ReadLine();
         }
     }
