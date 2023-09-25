@@ -17,8 +17,8 @@ namespace Лаб2
 
             room.SetSide(Direction.North, new WallWithBomb());
             room.SetSide(Direction.South, new WallWithBomb());
-           // room.SetSide(Direction.West, new WallWithBomb());
-           // room.SetSide(Direction.East, new WallWithBomb());
+            room.SetSide(Direction.West, new WallWithBomb());
+            room.SetSide(Direction.East, new WallWithBomb());
         }
 
         public override void BuildDoor(int room1, int room2)

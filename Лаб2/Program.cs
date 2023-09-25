@@ -8,8 +8,10 @@ namespace Лаб2
             MazeBuilder mazeBuilderWithBomb = new MazeWithBombBuilder();
             MazeBuilder mazeBuilderWithTrap = new MazeWithTrapBuilder();
             MazeGame mazeGame = new MazeGame();
+           
             Maze mazeWithBomb = mazeGame.CreateMaze(mazeBuilderWithBomb);
             Maze mazeWithTrap = mazeGame.CreateMaze(mazeBuilderWithTrap);
+            
             Console.WriteLine("Лабиринт!");
             Room roomWithTrap1 = mazeWithTrap.RoomNo(1);
             roomWithTrap1.Enter();
