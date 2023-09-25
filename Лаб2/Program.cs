@@ -5,8 +5,8 @@ namespace Лаб2
     {
         static void Main(string[] args)
         {
-            MazeBuilder mazeBuilderWithBomb = new MazeWithBombBuilder();
-            MazeBuilder mazeBuilderWithTrap = new MazeWithTrapBuilder();
+            MazeBuilder mazeBuilderWithBomb = new MazeBuilderWithBomb();
+            MazeBuilder mazeBuilderWithTrap = new MazeBuilderWithTrap();
             MazeGame mazeGame = new MazeGame();
            
             Maze mazeWithBomb = mazeGame.CreateMaze(mazeBuilderWithBomb);

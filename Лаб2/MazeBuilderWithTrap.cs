@@ -3,7 +3,7 @@ using Лаб1;
 
 namespace Лаб2
 {
-    public class MazeWithBombBuilder : MazeBuilder
+    public class MazeBuilderWithTrap : MazeBuilder
     {
         public override void BuildMaze()
         {
@@ -12,7 +12,7 @@ namespace Лаб2
 
         public override void BuildRoom(int Number)
         {
-            RoomWithBomb room = new RoomWithBomb(Number);
+            RoomWithTrap room = new RoomWithTrap(Number);
             _maze.AddRoom(room);
 
             room.SetSide(Direction.North, new WallWithBomb());
@@ -26,10 +26,10 @@ namespace Лаб2
             Room _room1 = _maze.RoomNo(room1);
             Room _room2 = _maze.RoomNo(room2);
 
-            Door door = new Door(_room1, _room2);
+            DoorWithTrap theDoor = new DoorWithTrap(_room1, _room2);
 
-            _room1.SetSide(Direction.East, door);
-            _room2.SetSide(Direction.West, door);
+            _room1.SetSide(Direction.East, theDoor);
+            _room2.SetSide(Direction.West, theDoor);
         }
     }
 }
