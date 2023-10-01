@@ -13,15 +13,5 @@ namespace Лаб3
         {
             return new WallWithBomb();
         }
-
-        public override Door CreateDoor(Room room1, Room room2)
-        {
-            return new Door(room1, room2);
-        }
-
-        protected override Maze CreateMaze()
-        {
-            return new Maze();
-        }
     }
 }

@@ -6,7 +6,6 @@ namespace Library
         public int Number { get; private init; }
         protected  IMapSite[] Sides { get; private init; }
         
-
         public Room(int Number)
         {
             this.Number = Number;

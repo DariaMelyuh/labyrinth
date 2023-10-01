@@ -3,17 +3,16 @@ namespace Library
 {
     public class Door : IMapSite
     {
-        private readonly Room _room1;
-        private readonly Room _room2;
+        private readonly Room room1;
+        private readonly Room room2;
         private readonly bool _isOpen;
 
-        public Door(Room _room1, Room _room2)
+        public Door(Room room1, Room room2)
         {
-            this._room1 = _room1;
-            this._room2 = _room2;
+            this.room1 = room1;
+            this.room2 = room2;
             _isOpen = true;
         }
-
         public virtual void Enter()
         {
             if (_isOpen)
@@ -27,19 +26,18 @@ namespace Library
         }
         public Room OtherSideFrom(Room room)
         {
-            if (room.Number == _room1.Number)
+            if (room.Number == room1.Number)
             {
-                return _room2;
+                return room2;
             }
-            else if (room.Number == _room2.Number)
+            else if (room.Number == room2.Number)
             {
-                return _room1;
+                return room1;
             }
             else
             {
                 throw new ArgumentOutOfRangeException();
             }
-
         }
     }
 }

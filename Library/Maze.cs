@@ -11,9 +11,9 @@ namespace Library
             _rooms.Add(room);
         }
 
-        public Room? RoomNo(int Number)
+        public Room? RoomNo(int number)
         {
-            return _rooms.SingleOrDefault(room => room.Number == Number);
+            return _rooms.SingleOrDefault(room => room.Number == number);
         }
     }
 }

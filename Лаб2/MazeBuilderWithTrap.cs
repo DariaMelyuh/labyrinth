@@ -5,31 +5,29 @@ namespace Лаб2
 {
     public class MazeBuilderWithTrap : MazeBuilder
     {
-        public override void BuildMaze()
-        {
-            _maze = new Maze();
-        }
-
-        public override void BuildRoom(int Number)
+        public override Room BuildRoom(int Number)
         {
             RoomWithTrap room = new RoomWithTrap(Number);
-            _maze.AddRoom(room);
+            Maze.AddRoom(room);
 
-            room.SetSide(Direction.North, new WallWithBomb());
-            room.SetSide(Direction.South, new WallWithBomb());
-            room.SetSide(Direction.West, new WallWithBomb());
-            room.SetSide(Direction.East, new WallWithBomb());
+            room.SetSide(Direction.North, new Wall());
+            room.SetSide(Direction.South, new Wall());
+            room.SetSide(Direction.West, new Wall());
+            room.SetSide(Direction.East, new Wall());
+
+            return room;
         }
-
-        public override void BuildDoor(int room1, int room2)
+        public override Door BuildDoor(int room1, int room2)
         {
-            Room _room1 = _maze.RoomNo(room1);
-            Room _room2 = _maze.RoomNo(room2);
+            Room _room1 = Maze.RoomNo(room1);
+            Room _room2 = Maze.RoomNo(room2);
 
-            DoorWithTrap theDoor = new DoorWithTrap(_room1, _room2);
+            DoorWithTrap door = new DoorWithTrap(_room1, _room2);
 
-            _room1.SetSide(Direction.East, theDoor);
-            _room2.SetSide(Direction.West, theDoor);
+            _room1.SetSide(Direction.East, door);
+            _room2.SetSide(Direction.West, door);
+
+            return door;
         }
     }
 }

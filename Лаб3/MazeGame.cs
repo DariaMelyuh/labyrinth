@@ -26,9 +26,24 @@ namespace Лаб3
             return maze;
         }
 
-        public abstract Room CreateRoom(int Number);
-        public abstract Door CreateDoor(Room room1, Room room2);
-        public abstract Wall CreateWall();
-        protected abstract Maze CreateMaze();
+        public virtual Room CreateRoom(int Number)
+        {
+            Room room = new Room(Number);
+            return room;
+        }
+
+
+        public virtual Door CreateDoor(Room room1, Room room2)
+        {
+            return new Door(room1, room2);
+        }
+        public virtual Wall CreateWall()
+        {
+            return new Wall();
+        }
+        public virtual Maze CreateMaze()
+        {
+            return new Maze();
+        }
     }
 }

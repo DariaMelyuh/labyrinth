@@ -5,19 +5,23 @@ namespace Лаб2
     {
         static void Main(string[] args)
         {
-            MazeBuilder mazeBuilderWithBomb = new MazeBuilderWithBomb();
-            MazeBuilder mazeBuilderWithTrap = new MazeBuilderWithTrap();
+            MazeBuilderWithBomb mazeBuilderWithBomb = new MazeBuilderWithBomb(); 
+            MazeBuilderWithTrap mazeBuilderWithTrap = new MazeBuilderWithTrap();
             MazeGame mazeGame = new MazeGame();
-           
-            Maze mazeWithBomb = mazeGame.CreateMaze(mazeBuilderWithBomb);
-            Maze mazeWithTrap = mazeGame.CreateMaze(mazeBuilderWithTrap);
-            
-            Console.WriteLine("Лабиринт!");
-            Room roomWithTrap1 = mazeWithTrap.RoomNo(1);
+
+            mazeGame.CreateMaze(mazeBuilderWithBomb);
+            mazeGame.CreateMaze(mazeBuilderWithTrap); 
+
+            Console.WriteLine("Лабиринт с ловушками:");
+            Room roomWithTrap1 = mazeBuilderWithTrap.Maze.RoomNo(1);
             roomWithTrap1.Enter();
-            Room roomWithBomb1 = mazeWithBomb.RoomNo(1);
+
+            Console.WriteLine("\nЛабиринт с бомбами:");
+            Room roomWithBomb1 = mazeBuilderWithBomb.Maze.RoomNo(1);
             roomWithBomb1.Enter();
+
             Console.ReadLine();
         }
     }
+
 }

@@ -12,9 +12,7 @@ namespace Лаб1
             {
                 Console.WriteLine("Стены разрушены!");
                 _isExploded = true;
-               
             }
-            
         }
         public override void Enter()
         {
@@ -27,6 +25,5 @@ namespace Лаб1
               base.Enter();
            }
         }
-
     }
 }
