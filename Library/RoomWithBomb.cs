@@ -6,6 +6,7 @@ namespace Лаб1
     public class RoomWithBomb : Room
     {
         private static Random Rnd = new Random();
+        
         public RoomWithBomb(int Number) : base(Number) { }
 
         public override void Enter()

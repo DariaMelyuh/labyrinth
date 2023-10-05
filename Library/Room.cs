@@ -4,10 +4,15 @@ namespace Library
     public class Room : IMapSite
     {
         public int Number { get; private init; }
+       
         protected  IMapSite[] Sides { get; private init; }
         
         public Room(int Number)
         {
+            if(Number<1)
+            {
+                throw new ArgumentNullException("Номер комнаты не могут быть <1.");
+            }
             this.Number = Number;
             Sides = new IMapSite[4];
         }

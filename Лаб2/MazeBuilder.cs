@@ -1,9 +1,12 @@
 ﻿using Library;
+using Лаб1;
+
 namespace Лаб2
 {
     public class MazeBuilder
     {
-        public Maze Maze;
+        protected Maze Maze { get; }
+       
         public MazeBuilder()
         {
             Maze = new();
@@ -14,22 +17,62 @@ namespace Лаб2
             return Maze;
         }
 
-        public virtual Room BuildRoom(int Number)
+        public virtual void BuildRoom(int Number)
         {
-            Room room = new Room(Number);
+            if (Number < 0)
+            {
+                throw new ArgumentException("Number не может быть отрицательным.");
+            }
+           
+            Room room = CreaateRoom(Number);
+           
+            if (room == null)
+            {
+                throw new ArgumentNullException("CreaateRoom() вернул null.");
+            }
+           
             Maze.AddRoom(room);
-            return room;
+            room.SetSide(Direction.North, new Wall());
+            room.SetSide(Direction.South, new Wall());
+            room.SetSide(Direction.West, new Wall());
+            room.SetSide(Direction.East, new Wall());
         }
 
-        public virtual Door BuildDoor(int room1, int room2)
+        public virtual void BuildDoor(int room1, int room2)
         {
-            return new Door(Maze.RoomNo(room1), Maze.RoomNo(room2));
+            if (room1 < 0 || room2 < 0)
+            {
+                throw new ArgumentException("Номера комнат не могут быть отрицательными.");
+            }
+
+            var r1= Maze.RoomNo(room1);
+            var r2 = Maze.RoomNo(room2);
+            
+            if (r1 == null || r2 == null)
+            {
+                throw new ArgumentNullException("Одна из комнат не существует. Проверьте номера комнат.");
+            }
+
+            Door door = CreaateDoor(r1 , r2);
+            r1.SetSide(Direction.East, door);
+            r2.SetSide(Direction.West, door);
         }
 
         public virtual Wall BuildWall()
         {
             return new Wall();
         }
-       
+
+        protected virtual Room CreaateRoom(int number)
+        {
+            return new Room(number);
+        }
+
+        protected virtual Door CreaateDoor(Room room1, Room room2)
+        {
+            return new Door(room1, room2);
+           
+        }
+
     }
 }

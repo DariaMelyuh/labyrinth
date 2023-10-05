@@ -14,6 +14,7 @@ namespace Лаб1
                 _isExploded = true;
             }
         }
+       
         public override void Enter()
         {
            if (_isExploded)
