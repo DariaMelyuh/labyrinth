@@ -9,10 +9,8 @@ namespace Library
 
         public Door(Room room1, Room room2)
         {
-            if (room1 == null || room2 == null)
-            {
-                throw new ArgumentNullException("Комнаты не могут быть null.");
-            }
+            ArgumentNullException.ThrowIfNull(room1);
+            ArgumentNullException.ThrowIfNull(room2);
             this.room1 = room1;
             this.room2 = room2;
             _isOpen = true;

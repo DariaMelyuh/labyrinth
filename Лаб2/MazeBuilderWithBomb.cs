@@ -5,14 +5,10 @@ namespace Лаб2
 {
     public class MazeBuilderWithBomb : MazeBuilder
     {
-        public override void BuildRoom(int Number)
+        public override void BuildRoom(int number)
         {
-            RoomWithBomb room = new RoomWithBomb(Number);
-          
-            if (room == null)
-            {
-                throw new ArgumentNullException("Комнаты не могут быть null.");
-            }
+            RoomWithBomb room = new RoomWithBomb(number);
+            ArgumentNullException.ThrowIfNull(room);
             Maze.AddRoom(room);
 
             room.SetSide(Direction.North, new WallWithBomb());
@@ -22,6 +18,8 @@ namespace Лаб2
         }
         protected override Door CreaateDoor(Room room1, Room room2)
         {
+            ArgumentNullException.ThrowIfNull(room1);
+            ArgumentNullException.ThrowIfNull(room2);
             return new DoorWithTrap(room1, room2);
         }
         

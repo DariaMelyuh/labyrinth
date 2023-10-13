@@ -23,13 +23,8 @@ namespace Лаб2
             {
                 throw new ArgumentOutOfRangeException(nameof(number), number, "Number не может быть отрицательным.");
             }
-           
             Room room = CreaateRoom(number);
-          
-            if (room == null)
-            {
-                throw new ArgumentNullException("CreaateRoom() вернул null.");
-            }
+            ArgumentNullException.ThrowIfNull(room);
            
             Maze.AddRoom(room);
             room.SetSide(Direction.North, new Wall());
@@ -40,20 +35,10 @@ namespace Лаб2
 
         public virtual void BuildDoor(int room1, int room2)
         {
-            if (room1 < 0 || room2 < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(room1),
-                                                      nameof(room2),
-                                                      room1,
-                                                      room2,
-                                                      "Номера комнат не могут быть отрицательными.");
-            }
-
             var r1= Maze.RoomNo(room1);
             var r2 = Maze.RoomNo(room2);
             ArgumentNullException.ThrowIfNull(r1);
             ArgumentNullException.ThrowIfNull(r2);
-
             Door door = CreaateDoor(r1 , r2);
             r1.SetSide(Direction.East, door);
             r2.SetSide(Direction.West, door);
@@ -66,13 +51,18 @@ namespace Лаб2
 
         protected virtual Room CreaateRoom(int number)
         {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), number, "Number не может быть отрицательным.");
+            }
             return new Room(number);
         }
 
         protected virtual Door CreaateDoor(Room room1, Room room2)
         {
+            ArgumentNullException.ThrowIfNull(room1);
+            ArgumentNullException.ThrowIfNull(room2);
             return new Door(room1, room2);
-           
         }
 
     }

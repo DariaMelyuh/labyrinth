@@ -4,12 +4,16 @@ namespace Лаб3
 {
     public class MazeWithBombGame : MazeGame
     {
-        public override Room CreateRoom(int Number)
+        protected override Room CreateRoom(int number)
         {
-            return new RoomWithBomb(Number);
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), number, "Number не может быть отрицательным.");
+            }
+            return new RoomWithBomb(number);
         }
 
-        public override Wall CreateWall()
+        protected override Wall CreateWall()
         {
             return new WallWithBomb();
         }

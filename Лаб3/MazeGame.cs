@@ -7,7 +7,9 @@ namespace Лаб3
         {
             Maze maze = CreateMaze();
             Room room1 = CreateRoom(1);
+            ArgumentNullException.ThrowIfNull(room1);
             Room room2 = CreateRoom(2);
+            ArgumentNullException.ThrowIfNull(room2);
             Door door = CreateDoor(room1, room2);
 
             maze.AddRoom(room1);
@@ -26,22 +28,30 @@ namespace Лаб3
             return maze;
         }
 
-        public virtual Room CreateRoom(int Number)
+        protected virtual Room CreateRoom(int number)
         {
-            Room room = new Room(Number);
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), number, "Number не может быть отрицательным.");
+            }
+            Room room = new Room(number);
+            ArgumentNullException.ThrowIfNull(room);
             return room;
         }
 
-
-        public virtual Door CreateDoor(Room room1, Room room2)
+        protected virtual Door CreateDoor(Room room1, Room room2)
         {
+            ArgumentNullException.ThrowIfNull(room1);
+            ArgumentNullException.ThrowIfNull(room2);
             return new Door(room1, room2);
         }
-        public virtual Wall CreateWall()
+
+        protected virtual Wall CreateWall()
         {
             return new Wall();
         }
-        public virtual Maze CreateMaze()
+
+        protected virtual Maze CreateMaze()
         {
             return new Maze();
         }

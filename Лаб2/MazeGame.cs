@@ -11,5 +11,4 @@ namespace Лаб2
             builder.BuildDoor(1, 2);
         }
     }
-
 }

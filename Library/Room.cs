@@ -7,11 +7,11 @@ namespace Library
        
         protected  IMapSite[] Sides { get; private init; }
         
-        public Room(int Number)
+        public Room(int number)
         {
-            if(Number<1)
+            if (number < 0)
             {
-                throw new ArgumentNullException("Номер комнаты не могут быть <1.");
+                throw new ArgumentOutOfRangeException(nameof(number), number, "Number не может быть отрицательным.");
             }
             this.Number = Number;
             Sides = new IMapSite[4];
