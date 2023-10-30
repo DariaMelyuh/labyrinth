@@ -30,6 +30,6 @@ namespace Library
         public virtual void Enter()
         {
             Console.WriteLine($"Вы находитесь в комнате {Number}.");
-        }
+        } 
     }
 }

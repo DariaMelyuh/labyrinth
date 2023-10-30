@@ -22,5 +22,6 @@ namespace Лаб1
             Console.WriteLine("Вы попали в ловушку!");
             _trapDoor.Enter();
         }
+        
     }
 }
