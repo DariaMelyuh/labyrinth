@@ -1,17 +1,17 @@
 ﻿using Лаб1;
 namespace MazeSingleton
 {
-    public class SingletonMazeFactory : MazeFactory
+    public class MazeSingleton : MazeFactory
     {
-        private static SingletonMazeFactory? _instance;
+        private static MazeSingleton? _instance;
 
-        private SingletonMazeFactory() { }
+        private MazeSingleton() { }
 
-        public static SingletonMazeFactory Instance
+        public static MazeSingleton Instance
         {
             get
             {
-                _instance ??= new SingletonMazeFactory();
+                _instance ??= new MazeSingleton();
                 return _instance;
             }
         }
